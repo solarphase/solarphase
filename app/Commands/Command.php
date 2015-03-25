@@ -1,4 +1,4 @@
-<?php namespace App\Commands;
+<?php namespace SolarPhase\Commands;
 
 abstract class Command {
 

@@ -1,4 +1,4 @@
-<?php namespace App\Events;
+<?php namespace SolarPhase\Events;
 
 abstract class Event {
 
