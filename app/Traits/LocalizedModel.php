@@ -2,15 +2,7 @@
 
 trait LocalizedModel {
 
-	/**
-	 * Returns the localization identifier of the model.
-	 *
-	 * @return string
-	 */
-	protected function localizationIdentifier()
-	{
-		return 'model.'.$this->table;
-	}
+	protected $l18n_base_id = '';
 
 	/**
 	 * Returns the singular localized name of the model.
@@ -19,7 +11,7 @@ trait LocalizedModel {
 	 */
 	public function singularName()
 	{
-		return trans_choice($this->localizationIdentifier(), 1);
+		return trans_choice($l18n_base_id, 1);
 	}
 
 	/**
@@ -29,7 +21,7 @@ trait LocalizedModel {
 	 */
 	public function pluralName()
 	{
-		return trans_choice($this->localizationIdentifier(), 2);
+		return trans_choice($l18n_base_id, 2);
 	}
 
 	/**
@@ -40,7 +32,7 @@ trait LocalizedModel {
 	 */
 	public function trans($attribute)
 	{
-		return trans("{$this->localizationIdentifier()}_{$attribute}");
+		return trans("{$l18n_base_id}_{$attribute}");
 	}
 
 	/**
@@ -53,7 +45,7 @@ trait LocalizedModel {
 	 */
 	public function transChoice($attribute, $c)
 	{
-		return trans_choice("{$this->localizationIdentifier()}_{$attribute}", $c);
+		return trans_choice("{$l18n_base_id}_{$attribute}", $c);
 	}
 
 }

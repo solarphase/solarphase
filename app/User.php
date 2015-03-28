@@ -12,6 +12,13 @@ class User extends Model implements AuthenticatableContract {
 	use Authenticatable, SoftDeletes, LocalizedModel;
 
 	/**
+	 * The localization base identifier of the model.
+	 *
+	 * @var string
+	 */
+	protected $l18n_base_id = 'model.users';
+
+	/**
 	 * The database table used by the model.
 	 *
 	 * @var string
