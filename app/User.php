@@ -5,9 +5,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 
+use SolarPhase\Traits\LocalizedModel;
+
 class User extends Model implements AuthenticatableContract {
 
-	use Authenticatable, SoftDeletes;
+	use Authenticatable, SoftDeletes, LocalizedModel;
 
 	/**
 	 * The database table used by the model.
