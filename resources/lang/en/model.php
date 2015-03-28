@@ -27,4 +27,9 @@ return [
 	'storage_files_mime_type' => 'MIME Type',
 	'storage_files_public' => 'Is Public?',
 
+	'storage_documents' => 'Document|Documents',
+	'storage_documents_title' => 'Title',
+	'storage_documents_content' => 'Content',
+	'storage_documents_public' => 'Is Public',
+
 ];
