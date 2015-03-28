@@ -32,4 +32,9 @@ return [
 	'storage_documents_content' => 'Content',
 	'storage_documents_public' => 'Is Public',
 
+	'blog_categories' => 'Category|Categories',
+	'blog_categories_title' => 'Title',
+	'blog_categories_master' => 'Is Master?',
+	'blog_categories_enabled' => 'Is Enabled?',
+
 ];

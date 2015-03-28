@@ -11,9 +11,23 @@ class LinkTest extends TestCase {
 		$link = new SolarPhase\Website\Link;
 		$link->uri = '/test';
 		$link->page = new SolarPhase\Website\Page;
-		$link->page->uri = '/test';
+		$link->page->uri = '/test2';
 
-		$this->assertEquals('/test', $link->uri);
+		$this->assertEquals('/test2', $link->uri);
+	}
+
+	/**
+	 * Test the uri attribute getter to make sure it secondarily returns the
+	 * associated category URI if present.
+	 */
+	public function testGetUriAttributesFetchesCategoryUriSecondarily()
+	{
+		$link = new SolarPhase\Website\Link;
+		$link->uri = '/test';
+		$link->category = new SolarPhase\Website\Page;
+		$link->category->uri = '/test2';
+
+		$this->assertEquals('/test2', $link->uri);
 	}
 
 	/**

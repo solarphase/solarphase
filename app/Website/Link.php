@@ -44,13 +44,23 @@ class Link extends Model {
 	}
 
 	/**
-	 * Returns the children links.
+	 * Returns the associated page.
 	 *
 	 * @return Illuminate\Database\Eloquent\Relations\HasOne
 	 */
 	public function page()
 	{
 		return $this->hasOne('SolarPhase\Website\Page');
+	}
+
+	/**
+	 * Returns the associated blog category.
+	 *
+	 * @return Illuminate\Database\Eloquent\Relations\HasOne
+	 */
+	public function category()
+	{
+		return $this->hasOne('SolarPhase\Blog\Category');
 	}
 
 	/**
@@ -85,6 +95,11 @@ class Link extends Model {
 		if ($this->page)
 		{
 			return $this->page->uri;
+		}
+
+		if ($this->category)
+		{
+			return $this->category->uri;
 		}
 		
 		return $value;
