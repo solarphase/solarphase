@@ -16,7 +16,9 @@ class Link extends Model {
 	protected $l18n_base_id = 'model.website_links';
 
 	/**
-	 * A whitelist of all mass-assignable attributes.
+	 * The attributes that are mass assignable.
+	 *
+	 * @var array
 	 */
 	protected $fillable = ['title', 'uri', 'order', 'enabled'];
 
