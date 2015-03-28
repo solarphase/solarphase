@@ -39,4 +39,14 @@ class User extends Model implements AuthenticatableContract {
 	 */
 	protected $hidden = ['password', 'remember_token'];
 
+	/**
+	 * Returns the articles that have been published by the user.
+	 *
+	 * @return Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function articles()
+	{
+		return $this->hasMany('SolarPhase\Blog\Article');
+	}
+
 }

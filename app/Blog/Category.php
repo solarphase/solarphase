@@ -33,4 +33,14 @@ class Category extends Model {
 		return $this->belongsTo('SolarPhase\Website\Link');
 	}
 
+	/**
+	 * Returns the articles that belong to the category.
+	 *
+	 * @return Illuminate\Database\Eloquent\Relations\HasMany
+	 */
+	public function articles()
+	{
+		return $this->hasMany('SolarPhase\Blog\Article');
+	}
+
 }

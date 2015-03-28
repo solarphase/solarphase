@@ -6,6 +6,7 @@ return [
 	'users_name' => 'Name',
 	'users_email' => 'Email',
 	'users_password' => 'Password',
+	'users_articles' => 'Articles',
 
 	'website_links' => 'Link|Links',
 	'website_links_title' => 'Title',
@@ -36,5 +37,14 @@ return [
 	'blog_categories_title' => 'Title',
 	'blog_categories_master' => 'Is Master?',
 	'blog_categories_enabled' => 'Is Enabled?',
+	'blog_categories_link' => 'Link',
+	'blog_categories_articles' => 'Articles',
+
+	'blog_articles' => 'Article|Articles',
+	'blog_articles_title' => 'Title',
+	'blog_articles_content' => 'Content',
+	'blog_articles_published_at' => 'Published At',
+	'blog_articles_published_by' => 'Published By',
+	'blog_articles_category' => 'Category',
 
 ];
