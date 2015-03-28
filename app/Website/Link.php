@@ -1,12 +1,13 @@
 <?php namespace SolarPhase\Website;
 
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\SoftDeletes;
 
 use SolarPhase\Traits\LocalizedModel;
 
 class Link extends Model {
 
-	use LocalizedModel;
+	use SoftDeletes, LocalizedModel;
 
 	/**
 	 * The localization base identifier of the model.
@@ -43,6 +44,16 @@ class Link extends Model {
 	}
 
 	/**
+	 * Returns the children links.
+	 *
+	 * @return Illuminate\Database\Eloquent\Relations\HasOne
+	 */
+	public function page()
+	{
+		return $this->hasOne('SolarPhase\Website\Page');
+	}
+
+	/**
 	 * Limits the result set to only parent links.
 	 *
 	 * @param mixed $query
@@ -62,6 +73,21 @@ class Link extends Model {
 	public function scopeOnlyChildren($query)
 	{
 		return $query->whereNotNull('parent_id');
+	}
+
+	/**
+	 * Getter for the uri attribute.
+	 *
+	 * @return string
+	 */
+	public function getUriAttribute()
+	{
+		if ($this->page)
+		{
+			return $this->page->uri;
+		}
+		
+		return $this->uri;
 	}
 
 }

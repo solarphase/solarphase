@@ -21,6 +21,7 @@ class CreateLinksTable extends Migration {
 			$table->boolean('enabled')->default(false);
 			$table->integer('parent_id')->unsigned()->nullable();
 			$table->foreign('parent_id')->references('id')->on('links');
+			$table->softDeletes();
 			$table->timestamps();
 		});
 	}

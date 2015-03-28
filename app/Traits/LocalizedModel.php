@@ -2,8 +2,6 @@
 
 trait LocalizedModel {
 
-	protected $l18n_base_id = '';
-
 	/**
 	 * Returns the singular localized name of the model.
 	 *
