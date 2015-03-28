@@ -80,14 +80,14 @@ class Link extends Model {
 	 *
 	 * @return string
 	 */
-	public function getUriAttribute()
+	public function getUriAttribute($value)
 	{
 		if ($this->page)
 		{
 			return $this->page->uri;
 		}
 		
-		return $this->uri;
+		return $value;
 	}
 
 }
