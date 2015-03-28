@@ -20,7 +20,8 @@ class CreateLinksTable extends Migration {
 			$table->integer('order')->default(0);
 			$table->boolean('enabled')->default(false);
 			$table->integer('parent_id')->unsigned()->nullable();
-			$table->foreign('parent_id')->references('id')->on('links');
+			$table->foreign('parent_id')->references('id')->on('links')
+				->onDelete('set null');
 			$table->softDeletes();
 			$table->timestamps();
 		});

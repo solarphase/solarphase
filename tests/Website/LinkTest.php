@@ -28,4 +28,27 @@ class LinkTest extends TestCase {
 		$this->assertEquals('/test', $link->uri);
 	}
 
+	/**
+	 * Tests both the "only parents" and the "only children" scopes.
+	 */
+	public function testOnlyScopes()
+	{
+		DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+		SolarPhase\Website\Link::truncate();
+		DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+
+		$l1 = SolarPhase\Website\Link::create(['title' => 'test 1']);
+		$l2 = SolarPhase\Website\Link::create(['title' => 'test 2']);
+		$l2->parent()->associate($l1);
+		$l2->save();
+
+		$parents = SolarPhase\Website\Link::onlyParents()->get();
+		$this->assertCount(1, $parents);
+		$this->assertEquals('test 1', $parents[0]->title);
+
+		$children = SolarPhase\Website\Link::onlyChildren()->get();
+		$this->assertCount(1, $children);
+		$this->assertEquals('test 2', $children[0]->title);
+	}
+
 }

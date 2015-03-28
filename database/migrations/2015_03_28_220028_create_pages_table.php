@@ -19,7 +19,8 @@ class CreatePagesTable extends Migration {
 			$table->string('uri', 128);
 			$table->text('content');
 			$table->integer('link_id')->unsigned()->nullable();
-			$table->foreign('link_id')->references('id')->on('links');
+			$table->foreign('link_id')->references('id')->on('links')
+				->onDelete('set null');
 			$table->softDeletes();
 			$table->timestamps();
 		});
