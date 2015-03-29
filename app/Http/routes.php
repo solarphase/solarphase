@@ -11,4 +11,5 @@
 |
 */
 
-// Nothing here yet...
+Route::get('/file/{id}', 'StorageController@file');
+Route::get('/document/{id}', 'StorageController@document');

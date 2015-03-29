@@ -23,4 +23,14 @@ class Document extends Model {
 	 */
 	protected $fillable = ['title', 'content', 'public'];
 
+	/**
+	 * Returns the content of the document in its HTML equivalent.
+	 *
+	 * @return string
+	 */
+	public function toHtml()
+	{
+		return \Markdown::convertToHtml($this->content);
+	}
+
 }

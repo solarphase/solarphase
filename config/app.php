@@ -136,6 +136,8 @@ return [
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 
+		'GrahamCampbell\Markdown\MarkdownServiceProvider',
+
 		/*
 		 * Application Service Providers...
 		 */
@@ -192,6 +194,8 @@ return [
 		'URL'       => 'Illuminate\Support\Facades\URL',
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
+
+		'Markdown'	=> 'GrahamCampbell\Markdown\Facades\Markdown',
 
 	],
 
