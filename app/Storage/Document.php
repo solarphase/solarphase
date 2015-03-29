@@ -4,10 +4,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 use SolarPhase\Traits\LocalizedModel;
+use SolarPhase\Traits\MarkdownContent;
 
 class Document extends Model {
 
-	use SoftDeletes, LocalizedModel;
+	use SoftDeletes, LocalizedModel, MarkdownContent;
 
 	/**
 	 * The localization base identifier of the model.

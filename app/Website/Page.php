@@ -4,10 +4,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 use SolarPhase\Traits\LocalizedModel;
+use SolarPhase\Traits\MarkdownContent;
 
 class Page extends Model {
 
-	use SoftDeletes, LocalizedModel;
+	use SoftDeletes, LocalizedModel, MarkdownContent;
 
 	/**
 	 * The localization base identifier of the model.
@@ -31,16 +32,6 @@ class Page extends Model {
 	public function link()
 	{
 		return $this->belongsTo('SolarPhase\Website\Link');
-	}
-
-	/**
-	 * Returns the content of the page in its HTML equivalent.
-	 *
-	 * @return string
-	 */
-	public function toHtml()
-	{
-		return \Markdown::convertToHtml($this->content);
 	}
 
 }
