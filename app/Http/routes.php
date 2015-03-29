@@ -11,6 +11,28 @@
 |
 */
 
+// User routes.
+Route::group(['prefix' => 'user'], function()
+{
+	Route::group(['middleware' => 'guest'], function() {
+		Route::get('/login', [
+			'as' => 'user.login',
+			'uses' => 'UserController@login'
+		]);
+
+		Route::post('/login', [
+			'as' => 'user.login',
+			'uses' => 'UserController@postLogin'
+		]);
+	});
+
+	Route::get('/logout', [
+		'middleware' => 'auth',
+		'as' => 'user.logout',
+		'uses' => 'UserController@logout'
+	]);
+});
+
 Route::get('/file/{id}', ['as' => 'storage.file', 'uses' => 'StorageController@file']);
 Route::get('/document/{id}', ['as' => 'storage.document', 'uses' => 'StorageController@document']);
 

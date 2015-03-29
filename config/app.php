@@ -136,6 +136,7 @@ return [
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 
+		'Collective\Html\HtmlServiceProvider',
 		'GrahamCampbell\Markdown\MarkdownServiceProvider',
 
 		/*
@@ -195,6 +196,8 @@ return [
 		'Validator' => 'Illuminate\Support\Facades\Validator',
 		'View'      => 'Illuminate\Support\Facades\View',
 
+		'Form' => 'Collective\Html\FormFacade',
+		'Html' => 'Collective\Html\HtmlFacade',
 		'Markdown'	=> 'GrahamCampbell\Markdown\Facades\Markdown',
 
 	],
