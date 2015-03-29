@@ -11,5 +11,8 @@
 |
 */
 
+// TODO: Give names to all the routes.
+
 Route::get('/file/{id}', 'StorageController@file');
 Route::get('/document/{id}', 'StorageController@document');
+Route::get('{uri?}', 'WebsiteController@page');

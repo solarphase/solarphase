@@ -33,4 +33,14 @@ class Page extends Model {
 		return $this->belongsTo('SolarPhase\Website\Link');
 	}
 
+	/**
+	 * Returns the content of the page in its HTML equivalent.
+	 *
+	 * @return string
+	 */
+	public function toHtml()
+	{
+		return \Markdown::convertToHtml($this->content);
+	}
+
 }
