@@ -11,8 +11,7 @@
 |
 */
 
-// TODO: Give names to all the routes.
+Route::get('/file/{id}', ['as' => 'storage.file', 'uses' => 'StorageController@file']);
+Route::get('/document/{id}', ['as' => 'storage.document', 'uses' => 'StorageController@document']);
 
-Route::get('/file/{id}', 'StorageController@file');
-Route::get('/document/{id}', 'StorageController@document');
-Route::get('{uri?}', 'WebsiteController@page');
+Route::get('{uri?}', ['as' => 'website.page', 'uses' => 'WebsiteController@page']);
