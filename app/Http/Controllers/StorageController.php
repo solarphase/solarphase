@@ -41,6 +41,7 @@ class StorageController extends Controller {
 			return redirect('/user/login');
 		}
 
+		$this->setTitle($document->title);
 		return view('storage.document', ['model' => $document]);
 	}
 
