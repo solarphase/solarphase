@@ -5,8 +5,13 @@
 				{{ $article->title }}
 			</a>
 		</h2>
-		@if ($model->published_at)
-			<p><time>{{ $article->published_at->diffForHumans() }}</time></p>
+		@if ($model->published_at && $model->published_by)
+			<p>
+				{{ trans('article.published') }}
+				<time>{{ $article->published_at->diffForHumans() }}</time>
+				{{ trans('article.by') }}
+				<strong>{{ $article->published_by->name }}</strong>
+			</p>
 		@endif
 	</header>
 	<div class="content">

@@ -1,10 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
-	<h2>{{ $model->title }}</h2>
-	@foreach ($articles as $article)
-		@include('blog.article_partial', ['article' => $article])
-	@endforeach
+	<div class="blog synopsisized">
+		@foreach ($articles as $article)
+			@include('blog.article_partial', ['article' => $article])
+		@endforeach
+	</div>
 
 	@include('shared.pagination', ['models' => $articles])
 @stop

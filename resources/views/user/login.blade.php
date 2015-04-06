@@ -1,19 +1,35 @@
 @extends('layouts.master')
 
 @section('content')
-	@if ($model['failure'])
-		<p>{{ trans('user.login_failed') }}</p>
-	@endif
+	<div class="col-xs-12 col-sm-6 col-sm-offset-3">
+		<h2>{{ trans('user.login') }}</h2>
+		@if ($model['failure'])
+			<p class="alert alert-danger">{{ trans('user.login_failed') }}</p>
+		@endif
 
-	{!! Form::open(['route' => 'user.login', 'method' => 'post']) !!}
+		{!! Form::open(['route' => 'user.login', 'method' => 'post']) !!}
 
-	{!! Form::label('email', trans('model.users_email')) !!}
-	{!! Form::email('email', $model['email']) !!}
+		<div class="form-group">
+		{!! Form::label('email', trans('model.users_email')) !!}
+		{!! Form::email('email', $model['email'], ['class' => 'form-control', 'autofocus' => 'autofocus']) !!}
+		</div>
 
-	{!! Form::label('password', trans('model.users_password')) !!}
-	{!! Form::password('password') !!}
+		<div class="form-group">
+			{!! Form::label('password', trans('model.users_password')) !!}
+			{!! Form::password('password', ['class' => 'form-control']) !!}
+		</div>
 
-	{!! Form::submit(trans('user.login')) !!}
+		<div class="checkbox">
+			<label>
+				{!! Form::checkbox('remember', 'yes', $model['remember']) !!}
+				{{ trans('user.remember') }}
+			</label>
+		</div>
 
-	{!! Form::close() !!}
+		<div class="form-group text-right">
+			{!! Form::submit(trans('user.login')) !!}
+		</div>
+
+		{!! Form::close() !!}
+	</div>
 @endsection

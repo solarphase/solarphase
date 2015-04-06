@@ -1,5 +1,6 @@
 @if ($models->lastPage() > 1)
-	<div>
+	<div class="website-pagination text-center">
+		<hr>
 		@if ($models->currentPage() > 1)
 			<a href="{{ $models->previousPageUrl() }}">&laquo;</a>
 		@endif

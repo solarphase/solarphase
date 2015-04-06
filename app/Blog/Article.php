@@ -36,7 +36,7 @@ class Article extends Model {
 	 *
 	 * @return Illuminate\Database\Eloquent\Relations\BelongsTo
 	 */
-	public function publishedBy()
+	public function published_by()
 	{
 		return $this->belongsTo('SolarPhase\User', 'user_id');
 	}

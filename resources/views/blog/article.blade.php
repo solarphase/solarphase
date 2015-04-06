@@ -1,5 +1,7 @@
 @extends('layouts.master')
 
 @section('content')
-	@include('blog.article_partial', ['article' => $model])
+	<div class="blog">
+		@include('blog.article_partial', ['article' => $model])
+	</div>
 @stop

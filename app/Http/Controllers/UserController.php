@@ -26,7 +26,7 @@ class UserController extends Controller {
 	 */
 	public function postLogin(Request $request)
 	{
-		$remember = $request->input('remember') === 'on';
+		$remember = $request->input('remember') === 'yes';
 		$input = [
 			'email' => $request->input('email'),
 			'password' => $request->input('password'),
