@@ -5,7 +5,7 @@
 				{{ $article->title }}
 			</a>
 		</h2>
-		@if ($model->published_at && $model->published_by)
+		@if ($article->published_at && $article->published_by)
 			<p>
 				{{ trans('article.published') }}
 				<time>{{ $article->published_at->diffForHumans() }}</time>
