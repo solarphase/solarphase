@@ -34,6 +34,7 @@ Route::group(['prefix' => 'user'], function()
 });
 
 Route::get('/blog/category/{id}', ['as' => 'blog.category', 'uses' => 'BlogController@category']);
+Route::get('/blog/article/{id}', ['as' => 'blog.article', 'uses' => 'BlogController@article']);
 
 Route::get('/file/{id}', ['as' => 'storage.file', 'uses' => 'StorageController@file']);
 Route::get('/document/{id}', ['as' => 'storage.document', 'uses' => 'StorageController@document']);

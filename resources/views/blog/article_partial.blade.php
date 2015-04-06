@@ -1,7 +1,9 @@
 <article>
 	<header>
 		<h2>
-			<a href="">{{ $article->title }}</a>
+			<a href="{{ URL::route('blog.article', ['id' => $article->id]) }}">
+				{{ $article->title }}
+			</a>
 		</h2>
 		@if ($model->published_at)
 			<p><time>{{ $article->published_at->diffForHumans() }}</time></p>

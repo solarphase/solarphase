@@ -2,6 +2,7 @@
 
 use SolarPhase\Http\Requests;
 use SolarPhase\Http\Controllers\Controller;
+use SolarPhase\Blog\Article;
 use SolarPhase\Blog\Category;
 
 use Illuminate\Http\Request;
@@ -19,6 +20,17 @@ class BlogController extends Controller {
 
 		return view('blog.category')->withModel($category)
 			->withArticles($articles);
+	}
+
+	public function article($id)
+	{
+		$article = Article::with('category')->findOrFail($id);
+		if ($article->category->link)
+		{
+			$this->setActiveLink($article->category->link);
+		}
+
+		return view('blog.article')->withModel($article);
 	}
 
 }
