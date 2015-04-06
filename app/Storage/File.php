@@ -11,11 +11,21 @@ class File extends Model {
 	use SoftDeletes, LocalizedModel;
 
 	/**
+	 * Returns the path where uploaded files are stored.
+	 *
+	 * @return string
+	 */
+	public static function getUploadPath()
+	{
+		return storage_path().'/files';
+	}
+
+	/**
 	 * The localization base identifier of the model.
 	 *
 	 * @var string
 	 */
-	protected $l18n_base_id = 'model.storage_files';
+	protected static $l18n_base_id = 'model.storage_files';
 
 	/**
 	 * The attributes that are mass assignable.
@@ -45,6 +55,16 @@ class File extends Model {
 	public function getFileName()
 	{
 		return "{$this->id}.{$this->extension}";
+	}
+
+	/**
+	 * Returns the full path to where the file is stored on the file system.
+	 *
+	 * @return string
+	 */
+	public function getFilePath()
+	{
+		return File::getUploadPath().'/'.$this->getFileName();
 	}
 
 }

@@ -23,6 +23,7 @@ return [
 	'website_pages_link' => 'Link',
 
 	'storage_files' => 'File|Files',
+	'storage_files_id' => 'Id',
 	'storage_files_name' => 'Name',
 	'storage_files_extension' => 'Extension',
 	'storage_files_mime_type' => 'MIME Type',

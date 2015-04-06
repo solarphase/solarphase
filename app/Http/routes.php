@@ -14,7 +14,8 @@
 // User routes.
 Route::group(['prefix' => 'user'], function()
 {
-	Route::group(['middleware' => 'guest'], function() {
+	Route::group(['middleware' => 'guest'], function()
+	{
 		Route::get('/login', [
 			'as' => 'user.login',
 			'uses' => 'UserController@login'
@@ -31,6 +32,14 @@ Route::group(['prefix' => 'user'], function()
 		'as' => 'user.logout',
 		'uses' => 'UserController@logout'
 	]);
+});
+
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth'], function()
+{
+	Route::group(['namespace' => 'Storage', 'prefix' => 'storage'], function()
+	{
+		Route::resource('file', 'FileController');
+	});
 });
 
 Route::get('/blog/category/{id}', ['as' => 'blog.category', 'uses' => 'BlogController@category']);

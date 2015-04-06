@@ -9,7 +9,7 @@ trait LocalizedModel {
 	 */
 	public function singularName()
 	{
-		return trans_choice($l18n_base_id, 1);
+		return trans_choice(static::$l18n_base_id, 1);
 	}
 
 	/**
@@ -19,7 +19,7 @@ trait LocalizedModel {
 	 */
 	public function pluralName()
 	{
-		return trans_choice($l18n_base_id, 2);
+		return trans_choice(static::$l18n_base_id, 2);
 	}
 
 	/**
@@ -30,6 +30,7 @@ trait LocalizedModel {
 	 */
 	public function trans($attribute)
 	{
+		$l18n_base_id = static::$l18n_base_id;
 		return trans("{$l18n_base_id}_{$attribute}");
 	}
 
@@ -43,6 +44,7 @@ trait LocalizedModel {
 	 */
 	public function transChoice($attribute, $c)
 	{
+		$l18n_base_id = static::$l18n_base_id;
 		return trans_choice("{$l18n_base_id}_{$attribute}", $c);
 	}
 
