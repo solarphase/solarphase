@@ -40,12 +40,19 @@ class Category extends Model {
 	 */
 	public function articles()
 	{
-		if ($this->master)
-		{
-			return Article::with('category');
-		}
-
 		return $this->hasMany('SolarPhase\Blog\Article');
+	}
+
+	/**
+	 * Returns the articles that should be shown to a visitor.
+	 *
+	 * @return mixed
+	 */
+	public function getArticles()
+	{
+		return $this->master
+			? Article::published()->orderBy('published_at', 'desc')
+			: $this->articles()->published()->orderBy('published_at', 'desc');
 	}
 
 	/**

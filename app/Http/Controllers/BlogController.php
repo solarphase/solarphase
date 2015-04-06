@@ -12,7 +12,9 @@ class BlogController extends Controller {
 	public function category($id)
 	{
 		$category = Category::with('link')->findOrFail($id);
-		$articles = $category->articles()->paginate(5);
+		$articles = $category->getArticles()->paginate(5);
+
+		$this->setTitle($category->title);
 		if ($category->link)
 		{
 			$this->setActiveLink($category->link);
@@ -24,7 +26,9 @@ class BlogController extends Controller {
 
 	public function article($id)
 	{
-		$article = Article::with('category')->findOrFail($id);
+		$article = Article::with('category')->published()->findOrFail($id);
+
+		$this->setTitle($article->title);
 		if ($article->category->link)
 		{
 			$this->setActiveLink($article->category->link);

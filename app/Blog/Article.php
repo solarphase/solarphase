@@ -32,6 +32,18 @@ class Article extends Model {
 	protected $dates = ['published_at'];
 
 	/**
+	 * Returns a relation to all articles that have been published within the
+	 * current context.
+	 *
+	 * @param mixed $query
+	 * @return mixed
+	 */
+	public function scopePublished($query)
+	{
+		return $query->whereNotNull('published_at');
+	}
+
+	/**
 	 * Returns the user that published the article.
 	 *
 	 * @return Illuminate\Database\Eloquent\Relations\BelongsTo

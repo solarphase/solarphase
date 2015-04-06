@@ -3,7 +3,7 @@
 		<div class="row">
 			<div class="col-xs-12 col-sm-6">
 				<p class="text-muted">
-					Copyright &copy; 2015, Kimmy Andersson
+					Copyright &copy; 2015, <strong>Kimmy Andersson</strong>
 				</p>
 			</div>
 			<div class="col-xs-12 col-sm-6">
