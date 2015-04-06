@@ -53,4 +53,18 @@ abstract class Controller extends BaseController {
 		view()->share('active_links', $active_links);
 	}
 
+	/**
+	 * Puts a message in the flash session to be displayed on the next request.
+	 *
+	 * @param string $type
+	 * @param string $text
+	 */
+	public function flashMessage($type, $text)
+	{
+		session()->flash('message', [
+			'type' => $type,
+			'text' => $text,
+		]);
+	}
+
 }
