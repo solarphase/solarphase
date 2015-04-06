@@ -5,6 +5,7 @@
 	<title>{{ $title }} | SolarPhase</title>
 </head>
 <body>
+	@include('user.navigation')
 	@include('shared.navigation')
 	@yield('content')
 </body>
