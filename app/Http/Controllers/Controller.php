@@ -19,7 +19,10 @@ abstract class Controller extends BaseController {
 		view()->share('active_links', []);
 		view()->share(
 			'navigation_links',
-			Link::onlyParents()->with('children')->get()
+			Link::onlyParents()
+				->orderBy('order', 'desc')
+				->with('children')
+				->get()
 		);
 	}
 
