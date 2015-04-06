@@ -40,6 +40,11 @@ class Category extends Model {
 	 */
 	public function articles()
 	{
+		if ($this->master)
+		{
+			return SolarPhase\Blog\Article::all();
+		}
+
 		return $this->hasMany('SolarPhase\Blog\Article');
 	}
 
