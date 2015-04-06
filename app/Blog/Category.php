@@ -42,7 +42,7 @@ class Category extends Model {
 	{
 		if ($this->master)
 		{
-			return SolarPhase\Blog\Article::all();
+			return Article::with('category');
 		}
 
 		return $this->hasMany('SolarPhase\Blog\Article');
