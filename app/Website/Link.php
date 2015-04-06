@@ -99,7 +99,7 @@ class Link extends Model {
 
 		if ($this->category)
 		{
-			return $this->category->uri;
+			return $this->category->getUri();
 		}
 		
 		return $value;

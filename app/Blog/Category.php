@@ -43,4 +43,14 @@ class Category extends Model {
 		return $this->hasMany('SolarPhase\Blog\Article');
 	}
 
+	/**
+	 * Returns the URI where the category resides.
+	 *
+	 * @return string
+	 */
+	public function getUri()
+	{
+		return \URL::route('blog.category', ['id' => $this->id]);
+	}
+
 }

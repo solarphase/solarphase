@@ -24,10 +24,10 @@ class LinkTest extends TestCase {
 	{
 		$link = new SolarPhase\Website\Link;
 		$link->uri = '/test';
-		$link->category = new SolarPhase\Website\Page;
-		$link->category->uri = '/test2';
+		$link->category = new SolarPhase\Blog\Category;
+		$link->category->id = 5;
 
-		$this->assertEquals('/test2', $link->uri);
+		$this->assertEquals(URL::route('blog.category', ['id' => 5]), $link->uri);
 	}
 
 	/**

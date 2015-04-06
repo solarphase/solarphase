@@ -44,7 +44,7 @@ abstract class Controller extends BaseController {
 	{
 		array_push($active_links, $link->id);
 		if ($link->parent) {
-			return setActiveLink($active_links);
+			return $this->setActiveLink($link->parent, $active_links);
 		}
 
 		view()->share('active_links', $active_links);
