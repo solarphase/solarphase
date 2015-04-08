@@ -2,7 +2,7 @@
 	<nav class="admin-nav">
 		<div class="container">
 			<div class="col-xs-8">
-				{{ trans('user.welcome', ['name' => Auth::user()->name]) }}
+				{!! trans('user.welcome', ['name' => Auth::user()->name]) !!}
 			</div>
 			<div class="col-xs-4 inner-nav">
 				<ul>
@@ -11,6 +11,19 @@
 							title="{{ trans('user.logout') }}">
 							<span class="glyphicon glyphicon-log-out"></span>
 						</a>
+					</li>
+					<li class="dropdown text-left">
+						<a class="dropdown-toggle" href="#" data-toggle="dropdown">
+							<span class="glyphicon glyphicon-hdd"></span>
+						</a>
+						<ul class="dropdown-menu pull-right" role="menu">
+							<li>
+								<a href="{{ URL::route('admin.storage.file.index') }}">
+									<span class="glyphicon glyphicon-file"></span>
+									{{ trans_choice('model.storage_files', 2) }}
+								</a>
+							</li>
+						</ul>
 					</li>
 				</ul>
 			</div>
