@@ -15,7 +15,7 @@ class Document extends Model {
 	 *
 	 * @var string
 	 */
-	protected $l18n_base_id = 'model.storage_documents';
+	protected static $l18n_base_id = 'model.storage_documents';
 
 	/**
 	 * The attributes that are mass assignable.

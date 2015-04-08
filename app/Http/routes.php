@@ -39,6 +39,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 	Route::group(['namespace' => 'Storage', 'prefix' => 'storage'], function()
 	{
 		Route::resource('file', 'FileController');
+		Route::resource('document', 'DocumentController');
 	});
 });
 

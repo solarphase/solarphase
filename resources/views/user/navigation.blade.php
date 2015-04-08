@@ -23,6 +23,12 @@
 									{{ trans_choice('model.storage_files', 2) }}
 								</a>
 							</li>
+							<li>
+								<a href="{{ URL::route('admin.storage.document.index') }}">
+									<span class="glyphicon glyphicon-font"></span>
+									{{ trans_choice('model.storage_documents', 2) }}
+								</a>
+							</li>
 						</ul>
 					</li>
 				</ul>

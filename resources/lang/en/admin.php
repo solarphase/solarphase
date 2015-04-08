@@ -19,5 +19,7 @@ return [
 	'view' => 'View',
 	'edit' => 'Edit',
 	'delete' => 'Delete',
+	'back' => 'Back',
+	'preview' => 'Preview',
 
 ];
