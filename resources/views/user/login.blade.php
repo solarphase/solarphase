@@ -27,7 +27,7 @@
 		</div>
 
 		<div class="form-group text-right">
-			{!! Form::submit(trans('user.login')) !!}
+			{!! Form::submit(trans('user.login'), ['class' => 'btn btn-sm btn-primary']) !!}
 		</div>
 
 		{!! Form::close() !!}
