@@ -21,7 +21,7 @@ class StorageController extends Controller {
 		$path = storage_path().'/files/'.$file->getFileName();
 		if (!$file->public && !\Auth::check())
 		{
-			return redirect('/user/login');
+			return redirect()->guest('/user/login');
 		}
 
 		return response()->download($path, $file->name);
