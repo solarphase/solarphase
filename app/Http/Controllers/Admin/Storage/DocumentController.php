@@ -12,6 +12,7 @@ class DocumentController extends Controller {
 	{
 		parent::__construct();
 
+		$this->setTitle(trans_choice('model.storage_documents', 2));
 		view()->share('route', 'admin.storage.document');
 		view()->share('model_class', 'SolarPhase\Storage\Document');
 	}

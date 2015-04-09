@@ -12,6 +12,7 @@ class FileController extends Controller {
 	{
 		parent::__construct();
 
+		$this->setTitle(trans_choice('model.storage_files', 2));
 		view()->share('file_upload', true);
 		view()->share('route', 'admin.storage.file');
 		view()->share('model_class', 'SolarPhase\Storage\File');

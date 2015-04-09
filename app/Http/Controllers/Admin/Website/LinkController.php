@@ -12,6 +12,7 @@ class LinkController extends Controller {
 	{
 		parent::__construct();
 
+		$this->setTitle(trans_choice('model.website_links', 2));
 		view()->share('route', 'admin.website.link');
 		view()->share('model_class', 'SolarPhase\Website\Link');
 	}
