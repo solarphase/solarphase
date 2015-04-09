@@ -14,7 +14,7 @@ class Link extends Model {
 	 *
 	 * @var string
 	 */
-	protected $l18n_base_id = 'model.website_links';
+	protected static $l18n_base_id = 'model.website_links';
 
 	/**
 	 * The attributes that are mass assignable.

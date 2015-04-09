@@ -31,6 +31,19 @@
 							</li>
 						</ul>
 					</li>
+					<li class="dropdown text-left">
+						<a class="dropdown-toggle" href="#" data-toggle="dropdown">
+							<span class="glyphicon glyphicon-globe"></span>
+						</a>
+						<ul class="dropdown-menu pull-right" role="menu">
+							<li>
+								<a href="{{ URL::route('admin.website.link.index') }}">
+									<span class="glyphicon glyphicon-link"></span>
+									{{ trans_choice('model.website_links', 2) }}
+								</a>
+							</li>
+						</ul>
+					</li>
 				</ul>
 			</div>
 		</div>
