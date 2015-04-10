@@ -12,9 +12,7 @@
 		</a>
 	</li>
 </ul>
-<hr>
-
-<div class="js-content-containers">
+<div class="js-content-containers top-10">
 	<div class="hidden" data-tab-id="0">
 		{!! Form::textarea('content', $model->content, ['class' => 'form-control js-content']) !!}
 	</div>
