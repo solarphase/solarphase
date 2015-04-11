@@ -86,6 +86,16 @@ class Link extends Model {
 	}
 
 	/**
+	 * Limits the result set to only links which have not been assigned.
+	 *
+	 * @param mixed $query
+	 */
+	public function scopeFree($query)
+	{
+		return $query->doesntHave('page')->doesntHave('category');
+	}
+
+	/**
 	 * Getter for the uri attribute.
 	 *
 	 * @return string

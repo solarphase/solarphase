@@ -15,7 +15,7 @@ class Page extends Model {
 	 *
 	 * @var string
 	 */
-	protected $l18n_base_id = 'model.website_pages';
+	protected static $l18n_base_id = 'model.website_pages';
 
 	/**
 	 * The attributes that are mass assignable.

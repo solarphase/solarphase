@@ -47,7 +47,7 @@ class UserController extends Controller {
 	public function store(Request $request)
 	{
 		$user = new User;
-		$this->fillModel($request, $user);
+		$this->fillModel($user, $request);
 		$this->resultMessage('created', $user, $user->save());
 
 		return redirect()->route('admin.user.index');
@@ -85,7 +85,7 @@ class UserController extends Controller {
 	public function update(Request $request, $id)
 	{
 		$user = User::findOrFail($id);
-		$this->fillModel($request, $user);
+		$this->fillModel($user, $request);
 		$this->resultMessage('saved', $user, $user->save());
 
 		return redirect()->route('admin.user.index');
@@ -120,7 +120,7 @@ class UserController extends Controller {
 	 * @param Request $request
 	 * @param User $model
 	 */
-	protected function fillModel(Request $request, User $model)
+	protected function fillModel(User $model, Request $request)
 	{
 		$model->name = $request->input('name');
 		$model->email = $request->input('email');

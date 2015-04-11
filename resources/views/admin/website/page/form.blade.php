@@ -6,15 +6,15 @@
 		{!! Form::text('title', $model->title, ['class' => 'form-control']) !!}
 	</div>
 
+	<div class="form-group">
+		{!! Form::label('uri', $model->trans('uri')) !!}
+		{!! Form::text('uri', $model->uri, ['class' => 'form-control']) !!}
+	</div>
+
 	@include('admin.content_editor', ['model' => $model])
 	<hr>
 
-	<div class="checkbox">
-		<label>
-			{!! Form::checkbox('public', 'yes', $model->public) !!}
-			{{ $model->trans('public') }}
-		</label>
-	</div>
+	@include('admin.relation', ['relation' => 'link', 'objects' => $links])
 @stop
 
 @section('javascript')

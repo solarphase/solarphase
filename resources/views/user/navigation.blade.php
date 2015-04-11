@@ -44,6 +44,12 @@
 									{{ trans_choice('model.website_links', 2) }}
 								</a>
 							</li>
+							<li>
+								<a href="{{ URL::route('admin.website.page.index') }}">
+									<span class="glyphicon glyphicon-file"></span>
+									{{ trans_choice('model.website_pages', 2) }}
+								</a>
+							</li>
 						</ul>
 					</li>
 					<li>

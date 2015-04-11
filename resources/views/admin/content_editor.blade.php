@@ -1,20 +1,23 @@
-<ul class="nav nav-tabs js-content-tabs">
-	<li data-tab-id="0">
-		<a href="#">
-			<span class="glyphicon glyphicon-edit"></span>
-			{{ trans('admin.edit') }}
-		</a>
-	</li>
-	<li data-tab-id="1">
-		<a href="#">
-			<span class="glyphicon glyphicon-eye-open"></span>
-			{{ trans('admin.preview') }}
-		</a>
-	</li>
-</ul>
-<div class="js-content-containers top-10">
-	<div class="hidden" data-tab-id="0">
-		{!! Form::textarea('content', $model->content, ['class' => 'form-control js-content']) !!}
+<div class="form-group">
+	{!! Form::label('content', $model->trans('content')) !!}
+	<ul class="nav nav-tabs js-content-tabs">
+		<li data-tab-id="0">
+			<a href="#">
+				<span class="glyphicon glyphicon-edit"></span>
+				{{ trans('admin.edit') }}
+			</a>
+		</li>
+		<li data-tab-id="1">
+			<a href="#">
+				<span class="glyphicon glyphicon-eye-open"></span>
+				{{ trans('admin.preview') }}
+			</a>
+		</li>
+	</ul>
+	<div class="js-content-containers top-10">
+		<div class="hidden" data-tab-id="0">
+			{!! Form::textarea('content', $model->content, ['class' => 'form-control js-content']) !!}
+		</div>
+		<div class="js-content-preview hidden" data-tab-id="1"></div>
 	</div>
-	<div class="js-content-preview hidden" data-tab-id="1"></div>
 </div>

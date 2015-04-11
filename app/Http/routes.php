@@ -47,6 +47,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 	Route::group(['namespace' => 'Website', 'prefix' => 'website'], function()
 	{
 		Route::resource('link', 'LinkController');
+		Route::resource('page', 'PageController');
 	});
 });
 
