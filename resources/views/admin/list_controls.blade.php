@@ -1,14 +1,14 @@
 <td class="text-right">
 	@if (isset($show))
 		<a class="btn btn-sm btn-default"
-			href="{{ URL::route($route.'.show', $model->id) }}"
+			href="{{ $model->getAdminShowUrl() }}"
 			title="{{ trans('admin.view') }}">
 			<span class="glyphicon glyphicon-eye-open"></span>
 		</a>
 	@endif
 
 	<a class="btn btn-sm btn-primary"
-		href="{{ URL::route($route.'.edit', $model->id) }}"
+		href="{{ $model->getAdminEditUrl() }}"
 		title="{{ trans('admin.edit') }}">
 		<span class="glyphicon glyphicon-edit"></span>
 	</a>

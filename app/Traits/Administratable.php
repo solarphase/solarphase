@@ -10,7 +10,18 @@ trait Administratable {
 	 */
 	public function getAdminIndexUrl()
 	{
-		return $this->getAdminUrl('index');
+		return self::getAdminUrl('index');
+	}
+
+	/**
+	 * Returns the URL to the create action of the corresponding administration
+	 * controller.
+	 *
+	 * @return string
+	 */
+	public function getAdminCreateUrl()
+	{
+		return self::getAdminUrl('create');
 	}
 
 	/**
@@ -21,7 +32,7 @@ trait Administratable {
 	 */
 	public function getAdminEditUrl()
 	{
-		return $this->getAdminUrl('edit', $this->id);
+		return self::getAdminUrl('edit', $this->id);
 	}
 
 	/**
@@ -32,7 +43,7 @@ trait Administratable {
 	 */
 	public function getAdminShowUrl()
 	{
-		return $this->getAdminUrl('show');
+		return self::getAdminUrl('show', $this->id);
 	}
 
 	/**
@@ -45,12 +56,17 @@ trait Administratable {
 	public function getAdminUrl($action, $id = null)
 	{
 		// TODO: Remove when blog admin is implemented:
-		if ($this instanceof \SolarPhase\Blog\Category)
+		if (isset($this) && $this instanceof \SolarPhase\Blog\Category)
 		{
 			return '';
 		}
 
-		return \URL::route($this->getAdminRouteName($action), $id);
+		if ($id)
+		{
+			return \URL::route(self::getAdminRouteName($action), $id);
+		}
+		
+		return \URL::route(self::getAdminRouteName($action));
 	}
 
 	/**

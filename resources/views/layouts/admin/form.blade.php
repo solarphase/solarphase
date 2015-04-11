@@ -16,7 +16,7 @@
 	<hr>
 	
 	<div class="form-group text-right">
-		<a class="btn btn-sm btn-default" href="{{ URL::route($route.'.index') }}">
+		<a class="btn btn-sm btn-default" href="{{ $model->getAdminIndexUrl() }}">
 			{{ trans('admin.cancel') }}
 		</a>
 		{!! Form::submit(trans('admin.'.($model->id ? 'save' : 'create')), ['class' => 'btn btn-sm btn-primary']) !!}

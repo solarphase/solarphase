@@ -11,7 +11,7 @@
 
 				<th class="text-right">
 					<a class="btn btn-sm btn-primary"
-						href="{{ URL::route($route.'.create') }}"
+						href="{{ $model_class::getAdminCreateUrl() }}"
 						title="{{ trans('admin.create') }}">
 						<span class="glyphicon glyphicon-file"></span>
 					</a>
