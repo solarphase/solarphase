@@ -16,8 +16,5 @@
 		{!! Form::text('uri', $model->uri, ['class' => 'form-control']) !!}
 	</div>
 
-	<div class="form-group">
-		{!! Form::label('parent_id', $model->trans('parent')) !!}
-		{!! Form::select('parent_id', $parents, $model->parent_id, ['class' => 'form-control']) !!}
-	</div>
+	@include('admin.relation', ['relation' => 'parent', 'objects' => $parents])
 @stop
