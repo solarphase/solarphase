@@ -16,7 +16,7 @@ class User extends Model implements AuthenticatableContract {
 	 *
 	 * @var string
 	 */
-	protected $l18n_base_id = 'model.users';
+	protected static $l18n_base_id = 'model.users';
 
 	/**
 	 * The database table used by the model.

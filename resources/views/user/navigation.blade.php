@@ -13,7 +13,8 @@
 						</a>
 					</li>
 					<li class="dropdown text-left">
-						<a class="dropdown-toggle" href="#" data-toggle="dropdown">
+						<a class="dropdown-toggle" href="#" data-toggle="dropdown"
+							title="{{ trans('model.storage') }}">
 							<span class="glyphicon glyphicon-hdd"></span>
 						</a>
 						<ul class="dropdown-menu pull-right" role="menu">
@@ -32,7 +33,8 @@
 						</ul>
 					</li>
 					<li class="dropdown text-left">
-						<a class="dropdown-toggle" href="#" data-toggle="dropdown">
+						<a class="dropdown-toggle" href="#" data-toggle="dropdown"
+							title="{{ trans('model.website') }}">
 							<span class="glyphicon glyphicon-globe"></span>
 						</a>
 						<ul class="dropdown-menu pull-right" role="menu">
@@ -43,6 +45,12 @@
 								</a>
 							</li>
 						</ul>
+					</li>
+					<li>
+						<a href="{{ URL::route('admin.user.index') }}"
+							title="{{ trans_choice('model.users', 2) }}">
+							<span class="glyphicon glyphicon-user"></span>
+						</a>
 					</li>
 				</ul>
 			</div>

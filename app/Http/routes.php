@@ -36,6 +36,8 @@ Route::group(['prefix' => 'user'], function()
 
 Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth'], function()
 {
+	Route::resource('user', 'UserController');
+
 	Route::group(['namespace' => 'Storage', 'prefix' => 'storage'], function()
 	{
 		Route::resource('file', 'FileController');

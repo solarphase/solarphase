@@ -8,6 +8,7 @@ return [
 	'users_password' => 'Password',
 	'users_articles' => 'Articles',
 
+	'website' => 'Website',
 	'website_links' => 'Link|Links',
 	'website_links_title' => 'Title',
 	'website_links_uri' => 'URI',
@@ -22,6 +23,7 @@ return [
 	'website_pages_content' => 'Content',
 	'website_pages_link' => 'Link',
 
+	'storage' => 'Storage',
 	'storage_files' => 'File|Files',
 	'storage_files_id' => 'Id',
 	'storage_files_name' => 'Name',
@@ -34,6 +36,7 @@ return [
 	'storage_documents_content' => 'Content',
 	'storage_documents_public' => 'Is Public',
 
+	'blog' => 'Blog',
 	'blog_categories' => 'Category|Categories',
 	'blog_categories_title' => 'Title',
 	'blog_categories_master' => 'Is Master?',
