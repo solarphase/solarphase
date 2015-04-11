@@ -20,7 +20,7 @@
 					<span class="glyphicon glyphicon-remove"></span>
 				@endif
 			</td>
-			@include('layouts.admin.list_controls')
+			@include('admin.list_controls', ['model' => $model, 'show' => true])
 		</tr>
 	@endforeach
 @stop

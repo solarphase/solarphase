@@ -20,7 +20,7 @@
 					</a>
 				@endif
 			</td>
-			@include('layouts.admin.list_controls', ['model' => $model, 'hide_show' => true])
+			@include('admin.list_controls', ['model' => $model])
 		</tr>
 	@endforeach
 @stop

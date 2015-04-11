@@ -1,5 +1,5 @@
 <td class="text-right">
-	@if (!isset($hide_show))
+	@if (isset($show))
 		<a class="btn btn-sm btn-default"
 			href="{{ URL::route($route.'.show', $model->id) }}"
 			title="{{ trans('admin.view') }}">
