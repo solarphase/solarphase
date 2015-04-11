@@ -16,6 +16,7 @@ return [
 	'website_links_enabled' => 'Enabled',
 	'website_links_parent' => 'Parent',
 	'website_links_children' => 'Children',
+	'website_links_association' => 'Association',
 
 	'website_pages' => 'Page|Pages',
 	'website_pages_title' => 'Title',

@@ -5,6 +5,7 @@
 	<th>{{ $model_class::trans('title') }}</th>
 	<th>{{ $model_class::trans('uri') }}</th>
 	<th>{{ $model_class::trans('parent') }}</th>
+	<th>{{ $model_class::trans('association') }}</th>
 @stop
 
 @section('tbody')
@@ -18,6 +19,15 @@
 					<a href="{{ URL::route('admin.website.link.edit', $model->parent->id) }}">
 						{{ $model->parent->title }}
 					</a>
+				@endif
+			</td>
+			<td>
+				@if ($model->getAssociatedModel())
+					<a href="{{ $model->getAssociatedModel()->getAdminEditUrl() }}">
+						{{ $model->getAssociatedModel()->title }}
+					</a>
+				@else
+					&ndash;
 				@endif
 			</td>
 			@include('admin.list_controls', ['model' => $model])

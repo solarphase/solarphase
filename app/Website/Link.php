@@ -4,10 +4,11 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 use SolarPhase\Traits\LocalizedModel;
+use SolarPhase\Traits\Administratable;
 
 class Link extends Model {
 
-	use SoftDeletes, LocalizedModel;
+	use SoftDeletes, LocalizedModel, Administratable;
 
 	/**
 	 * The localization base identifier of the model.
@@ -15,6 +16,13 @@ class Link extends Model {
 	 * @var string
 	 */
 	protected static $l18n_base_id = 'model.website_links';
+
+	/**
+	 * The admin route name of the model.
+	 *
+	 * @var string
+	 */
+	protected static $admin_route = 'admin.website.link';
 
 	/**
 	 * The attributes that are mass assignable.
@@ -102,17 +110,41 @@ class Link extends Model {
 	 */
 	public function getUriAttribute($value)
 	{
-		if ($this->page)
+		$model = $this->getAssociatedModel();
+		if ($model == null)
 		{
-			return $this->page->uri;
+			return $value;
 		}
 
-		if ($this->category)
+		if ($model->uri)
 		{
-			return $this->category->getUri();
+			return $model->uri;
+		}
+		else if ($model instanceof SolarPhase\Blog\Category)
+		{
+			return $model->getUri();
 		}
 		
 		return $value;
+	}
+
+	/**
+	 * Returns the model that is associated with the link.
+	 *
+	 * @return mixed
+	 */
+	public function getAssociatedModel()
+	{
+		if ($this->page)
+		{
+			return $this->page;
+		}
+		else if ($this->category)
+		{
+			return $this->category;
+		}
+
+		return null;
 	}
 
 }

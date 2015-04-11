@@ -5,17 +5,25 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 
 use SolarPhase\Traits\LocalizedModel;
 use SolarPhase\Traits\MarkdownContent;
+use SolarPhase\Traits\Administratable;
 
 class Article extends Model {
 
-	use SoftDeletes, LocalizedModel, MarkdownContent;
+	use SoftDeletes, LocalizedModel, MarkdownContent, Administratable;
 
 	/**
 	 * The localization base identifier of the model.
 	 *
 	 * @var string
 	 */
-	protected $l18n_base_id = 'model.blog_articles';
+	protected static $l18n_base_id = 'model.blog_articles';
+
+	/**
+	 * The admin route name of the model.
+	 *
+	 * @var string
+	 */
+	protected static $admin_route = 'admin.blog.article';
 
 	/**
 	 * The attributes that are mass assignable.

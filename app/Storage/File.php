@@ -5,10 +5,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Symfony\Component\HttpFoundation\File\UploadedFile;
 
 use SolarPhase\Traits\LocalizedModel;
+use SolarPhase\Traits\Administratable;
 
 class File extends Model {
 
-	use SoftDeletes, LocalizedModel;
+	use SoftDeletes, LocalizedModel, Administratable;
 
 	/**
 	 * Returns the path where uploaded files are stored.
@@ -26,6 +27,13 @@ class File extends Model {
 	 * @var string
 	 */
 	protected static $l18n_base_id = 'model.storage_files';
+
+	/**
+	 * The admin route name of the model.
+	 *
+	 * @var string
+	 */
+	protected static $admin_route = 'admin.storage.file';
 
 	/**
 	 * The attributes that are mass assignable.

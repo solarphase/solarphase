@@ -4,17 +4,25 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 use SolarPhase\Traits\LocalizedModel;
+use SolarPhase\Traits\Administratable;
 
 class Category extends Model {
 
-	use SoftDeletes, LocalizedModel;
+	use SoftDeletes, LocalizedModel, Administratable;
 
 	/**
 	 * The localization base identifier of the model.
 	 *
 	 * @var string
 	 */
-	protected $l18n_base_id = 'model.blog_categories';
+	protected static $l18n_base_id = 'model.blog_categories';
+
+	/**
+	 * The admin route name of the model.
+	 *
+	 * @var string
+	 */
+	protected static $admin_route = 'admin.blog.category';
 
 	/**
 	 * The attributes that are mass assignable.

@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Contracts\Auth\Authenticatable as AuthenticatableContract;
 
 use SolarPhase\Traits\LocalizedModel;
+use SolarPhase\Traits\Administratable;
 
 class User extends Model implements AuthenticatableContract {
 
-	use Authenticatable, SoftDeletes, LocalizedModel;
+	use Authenticatable, SoftDeletes, LocalizedModel, Administratable;
 
 	/**
 	 * The localization base identifier of the model.
@@ -17,6 +18,13 @@ class User extends Model implements AuthenticatableContract {
 	 * @var string
 	 */
 	protected static $l18n_base_id = 'model.users';
+
+	/**
+	 * The admin route name of the model.
+	 *
+	 * @var string
+	 */
+	protected static $admin_route = 'admin.user';
 
 	/**
 	 * The database table used by the model.
