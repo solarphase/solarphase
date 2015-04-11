@@ -17,4 +17,13 @@
 	</div>
 
 	@include('admin.relation', ['relation' => 'parent', 'objects' => $parents])
+
+	@if ($model->getAssociatedModel())
+		<h3>{{ $model->trans('association') }}</h3>
+		<p>
+			<a href="{{ $model->getAssociatedModel()->getAdminEditUrl() }}">
+				{{ $model->getAssociatedModel()->title }}
+			</a>
+		</p>
+	@endif
 @stop

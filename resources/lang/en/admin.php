@@ -21,5 +21,6 @@ return [
 	'delete' => 'Delete',
 	'back' => 'Back',
 	'preview' => 'Preview',
+	'goto_relation' => 'Go to the current relation.',
 
 ];
