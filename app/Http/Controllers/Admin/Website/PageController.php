@@ -125,7 +125,7 @@ class PageController extends Controller {
 		$link_id = $request->input('link_id');
 		if ($link_id)
 		{
-			$link = Link::findOrFail($parent_id);
+			$link = Link::findOrFail($link_id);
 			$model->link()->associate($link);
 		}
 		else
