@@ -48,7 +48,11 @@ class Article extends Model {
 	 */
 	public function scopePublished($query)
 	{
-		return $query->whereNotNull('published_at');
+		return $query->whereNotNull('published_at')
+			->whereHas('category', function($query)
+			{
+				$query->where('enabled', true);
+			});
 	}
 
 	/**
