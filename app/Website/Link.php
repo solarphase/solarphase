@@ -111,16 +111,11 @@ class Link extends Model {
 	public function getUriAttribute($value)
 	{
 		$model = $this->getAssociatedModel();
-		if ($model == null)
-		{
-			return $value;
-		}
-
-		if ($model->uri)
+		if ($model instanceof \SolarPhase\Website\Page)
 		{
 			return $model->uri;
 		}
-		else if ($model instanceof SolarPhase\Blog\Category)
+		else if ($model instanceof \SolarPhase\Blog\Category)
 		{
 			return $model->getUri();
 		}

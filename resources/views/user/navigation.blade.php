@@ -34,6 +34,21 @@
 					</li>
 					<li class="dropdown text-left">
 						<a class="dropdown-toggle" href="#" data-toggle="dropdown"
+							title="{{ trans('model.blog') }}">
+							<span class="glyphicon glyphicon-book"></span>
+						</a>
+						<ul class="dropdown-menu pull-right" role="menu">
+							<li>
+								<a href="{{ URL::route('admin.blog.category.index') }}">
+									<span class="glyphicon glyphicon-folder-open"></span>
+									{{ trans_choice('model.blog_categories', 2) }}
+								</a>
+							</li>
+						</ul>
+					</li>
+
+					<li class="dropdown text-left">
+						<a class="dropdown-toggle" href="#" data-toggle="dropdown"
 							title="{{ trans('model.website') }}">
 							<span class="glyphicon glyphicon-globe"></span>
 						</a>

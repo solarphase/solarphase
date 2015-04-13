@@ -55,12 +55,6 @@ trait Administratable {
 	 */
 	public function getAdminUrl($action, $id = null)
 	{
-		// TODO: Remove when blog admin is implemented:
-		if (isset($this) && $this instanceof \SolarPhase\Blog\Category)
-		{
-			return '';
-		}
-
 		if ($id)
 		{
 			return \URL::route(self::getAdminRouteName($action), $id);

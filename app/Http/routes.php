@@ -49,6 +49,11 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 		Route::resource('link', 'LinkController');
 		Route::resource('page', 'PageController');
 	});
+
+	Route::group(['namespace' => 'Blog', 'prefix' => 'blog'], function()
+	{
+		Route::resource('category', 'CategoryController');
+	});
 });
 
 Route::get('/blog/category/{id}', ['as' => 'blog.category', 'uses' => 'BlogController@category']);
