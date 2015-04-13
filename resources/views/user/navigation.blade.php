@@ -46,7 +46,7 @@
 							</li>
 							<li>
 								<a href="{{ URL::route('admin.blog.article.index') }}">
-									<span class="glyphicon glyphicon-file"></span>
+									<span class="glyphicon glyphicon-align-left"></span>
 									{{ trans_choice('model.blog_articles', 2) }}
 								</a>
 							</li>
@@ -67,7 +67,7 @@
 							</li>
 							<li>
 								<a href="{{ URL::route('admin.website.page.index') }}">
-									<span class="glyphicon glyphicon-file"></span>
+									<span class="glyphicon glyphicon-home"></span>
 									{{ trans_choice('model.website_pages', 2) }}
 								</a>
 							</li>
