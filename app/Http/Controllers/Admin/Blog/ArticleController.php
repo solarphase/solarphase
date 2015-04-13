@@ -123,7 +123,7 @@ class ArticleController extends Controller {
 		$category = Category::findOrFail($request->input('category_id'));
 		$model->category()->associate($category);
 
-		$publish = $request->input('publish') === 'yes';
+		$publish = $request->input('published') === 'yes';
 		if ($model->published_at != null && !$publish)
 		{
 			$model->published_at = null;
@@ -131,7 +131,7 @@ class ArticleController extends Controller {
 		}
 		else if ($model->published_at == null && $publish)
 		{
-			$model->published_at = new DateTime;
+			$model->published_at = new \DateTime;
 			$model->published_by()->associate(\Auth::user());
 		}
 	}
