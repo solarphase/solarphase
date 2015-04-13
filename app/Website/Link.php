@@ -110,14 +110,13 @@ class Link extends Model {
 	 */
 	public function getUriAttribute($value)
 	{
-		$model = $this->getAssociatedModel();
-		if ($model instanceof \SolarPhase\Website\Page)
+		if ($this->page)
 		{
-			return $model->uri;
+			return $this->page->uri;
 		}
-		else if ($model instanceof \SolarPhase\Blog\Category)
+		else if ($this->category)
 		{
-			return $model->getUri();
+			return $this->category->getUri();
 		}
 		
 		return $value;
@@ -140,6 +139,21 @@ class Link extends Model {
 		}
 
 		return null;
+	}
+
+	/**
+	 * Returns wether or not the link should be visible to the visitors.
+	 *
+	 * @return bool
+	 */
+	public function isEnabled()
+	{
+		if ($this->category)
+		{
+			return $this->category->enabled;
+		}
+
+		return true;
 	}
 
 }
