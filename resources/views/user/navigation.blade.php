@@ -44,6 +44,12 @@
 									{{ trans_choice('model.blog_categories', 2) }}
 								</a>
 							</li>
+							<li>
+								<a href="{{ URL::route('admin.blog.article.index') }}">
+									<span class="glyphicon glyphicon-file"></span>
+									{{ trans_choice('model.blog_articles', 2) }}
+								</a>
+							</li>
 						</ul>
 					</li>
 

@@ -75,4 +75,14 @@ class Article extends Model {
 		return $this->belongsTo('SolarPhase\Blog\Category');
 	}
 
+	/**
+	 * Returns wether or not the article has been published.
+	 *
+	 * @return bool
+	 */
+	public function isPublished()
+	{
+		return $this->published_at != null;
+	}
+
 }

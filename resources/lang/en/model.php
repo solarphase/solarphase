@@ -48,6 +48,7 @@ return [
 	'blog_articles' => 'Article|Articles',
 	'blog_articles_title' => 'Title',
 	'blog_articles_content' => 'Content',
+	'blog_articles_published' => 'Is Published?',
 	'blog_articles_published_at' => 'Published At',
 	'blog_articles_published_by' => 'Published By',
 	'blog_articles_category' => 'Category',

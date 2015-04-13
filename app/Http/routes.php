@@ -53,6 +53,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth
 	Route::group(['namespace' => 'Blog', 'prefix' => 'blog'], function()
 	{
 		Route::resource('category', 'CategoryController');
+		Route::resource('article', 'ArticleController');
 	});
 });
 
