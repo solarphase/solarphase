@@ -145,7 +145,7 @@ class ArticleController extends Controller {
 	 */
 	public function getCategoryList($id = null)
 	{
-		return Category::lists('title', 'id');
+		return Category::where('master', false)->lists('title', 'id');
 	}
 
 }
