@@ -10,7 +10,7 @@
 				<p class="text-muted text-right">
 					<small>
 						This website is entirely open source and is available on
-						<a href="https://github.com/solarphase" target="_blank">
+						<a href="https://github.com/solarphase/solarphase" target="_blank">
 							GitHub
 						</a>
 					</small>

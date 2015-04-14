@@ -6,6 +6,7 @@
 			@include('blog.article_partial', ['article' => $article])
 		@empty
 			<h2>{{ trans('category.empty_heading') }}</h2>
+			<hr/>
 			<p>{{ trans('category.empty') }}</p>
 		@endforelse
 	</div>

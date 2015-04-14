@@ -19,7 +19,11 @@ class WebsiteController extends Controller {
 		$page = Page::with('link')->where('uri', $uri)->firstOrFail();
 
 		$this->setTitle($page->title);
-		$this->setActiveLink($page->link);
+		if ($page->link)
+		{
+			$this->setActiveLink($page->link);
+		}
+
 		return view('website.page', ['model' => $page]);
 	}
 
