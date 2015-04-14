@@ -2,9 +2,12 @@
 
 @section('content')
 	<div class="blog synopsisized">
-		@foreach ($articles as $article)
+		@forelse ($articles as $article)
 			@include('blog.article_partial', ['article' => $article])
-		@endforeach
+		@empty
+			<h1>{{ trans('category.empty_heading') }}</h1>
+			<p>{{ trans('category.empty') }}</p>
+		@endforelse
 	</div>
 
 	@include('shared.pagination', ['models' => $articles])
