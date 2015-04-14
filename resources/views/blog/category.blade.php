@@ -5,7 +5,7 @@
 		@forelse ($articles as $article)
 			@include('blog.article_partial', ['article' => $article])
 		@empty
-			<h1>{{ trans('category.empty_heading') }}</h1>
+			<h2>{{ trans('category.empty_heading') }}</h2>
 			<p>{{ trans('category.empty') }}</p>
 		@endforelse
 	</div>
