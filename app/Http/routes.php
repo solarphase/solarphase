@@ -63,4 +63,4 @@ Route::get('/blog/article/{id}', ['as' => 'blog.article', 'uses' => 'BlogControl
 Route::get('/file/{id}', ['as' => 'storage.file', 'uses' => 'StorageController@file']);
 Route::get('/document/{id}', ['as' => 'storage.document', 'uses' => 'StorageController@document']);
 
-Route::get('{uri?}', ['as' => 'website.page', 'uses' => 'WebsiteController@page']);
+Route::get('{uri}', ['as' => 'website.page', 'uses' => 'WebsiteController@page'])->where('uri', '(.*)?');
