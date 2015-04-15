@@ -3,7 +3,7 @@
 		<img src="{{ URL::asset('img/logo.png') }}" alt="SolarPhase">
 	</a>
 </div>
-<hr/>
+{{-- <hr/> --}}
 
 <nav>
 	<ul>
