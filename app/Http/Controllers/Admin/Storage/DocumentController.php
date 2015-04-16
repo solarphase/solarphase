@@ -47,9 +47,7 @@ class DocumentController extends Controller {
 	public function store(Request $request)
 	{
 		$document = new Document;
-		$document->title = $request->input('title');
-		$document->content = $request->input('content');
-		$document->public = $request->input('public') === 'yes';
+		$this->fillModel($document, $request);
 
 		$result = $document->save();
 		$this->resultMessage('created', $document, $result);
@@ -94,12 +92,9 @@ class DocumentController extends Controller {
 	public function update(Request $request, $id)
 	{
 		$document = Document::findOrFail($id);
-		$document->title = $request->input('title');
-		$document->content = $request->input('content');
-		$document->public = $request->input('public') === 'yes';
-		$success = $document->save();
+		$this->fillModel($document, $request);
+		$this->resultMessage('saved', $document, $document->save());
 
-		$this->resultMessage('saved', $document, $success);
 		return redirect()->route('admin.storage.document.edit', $document->id);
 	}
 
@@ -115,6 +110,19 @@ class DocumentController extends Controller {
 		$this->resultMessage('deleted', $document, $document->delete());
 
 		return redirect()->route('admin.storage.document.index');
+	}
+
+	/**
+	 * Fills the document model with the input values of the request.
+	 *
+	 * @param Document $model
+	 * @param Request $request
+	 */
+	protected function fillModel(Document $model, Request $request)
+	{
+		$model->title = $request->input('title');
+		$model->content = $request->input('content');
+		$model->public = $request->input('public') === 'yes';
 	}
 
 }
