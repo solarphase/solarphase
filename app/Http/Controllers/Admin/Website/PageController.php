@@ -50,9 +50,15 @@ class PageController extends Controller {
 	{
 		$page = new Page;
 		$this->fillModel($page, $request);
-		$this->resultMessage('created', $page, $page->save());
 
-		return redirect()->route('admin.website.page.index');
+		$result = $page->save();
+		$this->resultMessage('created', $page, $result);
+		if (!$result)
+		{
+			return redirect()->route('admin.website.page.create');
+		}
+
+		return redirect()->route('admin.website.page.edit', $page->id);
 	}
 
 	/**
@@ -93,7 +99,7 @@ class PageController extends Controller {
 		$this->fillModel($page, $request);
 		$this->resultMessage('saved', $page, $page->save());
 
-		return redirect()->route('admin.website.page.index');
+		return redirect()->route('admin.website.page.edit', $page->id);
 	}
 
 	/**

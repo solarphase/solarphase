@@ -50,9 +50,15 @@ class ArticleController extends Controller {
 	{
 		$article = new Article;
 		$this->fillModel($article, $request);
-		$this->resultMessage('created', $article, $article->save());
 
-		return redirect()->route('admin.blog.article.index');
+		$result = $article->save();
+		$this->resultMessage('created', $article, $result);
+		if (!$result)
+		{
+			return redirect()->route('admin.blog.article.create');
+		}
+
+		return redirect()->route('admin.blog.article.edit', $article->id);
 	}
 
 	/**
@@ -93,7 +99,7 @@ class ArticleController extends Controller {
 		$this->fillModel($article, $request);
 		$this->resultMessage('saved', $article, $article->save());
 
-		return redirect()->route('admin.blog.article.index');
+		return redirect()->route('admin.blog.article.edit', $article->id);
 	}
 
 	/**

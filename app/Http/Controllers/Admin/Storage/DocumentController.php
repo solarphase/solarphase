@@ -50,10 +50,15 @@ class DocumentController extends Controller {
 		$document->title = $request->input('title');
 		$document->content = $request->input('content');
 		$document->public = $request->input('public') === 'yes';
-		$success = $document->save();
 
-		$this->resultMessage('created', $document, $success);
-		return redirect()->route('admin.storage.document.index');
+		$result = $document->save();
+		$this->resultMessage('created', $document, $result);
+		if (!$result)
+		{
+			return redirect()->route('admin.storage.document.create');
+		}
+
+		return redirect()->route('admin.storage.document.edit', $document->id);
 	}
 
 	/**
@@ -95,7 +100,7 @@ class DocumentController extends Controller {
 		$success = $document->save();
 
 		$this->resultMessage('saved', $document, $success);
-		return redirect()->route('admin.storage.document.index');
+		return redirect()->route('admin.storage.document.edit', $document->id);
 	}
 
 	/**
