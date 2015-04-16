@@ -4,15 +4,16 @@ html {
 }
 
 body {
-  margin-bottom: @footer-height;
+  margin-bottom: @footer-height + 20px;
 
   @media(max-width: @screen-xs-max) {
-    margin-bottom: @footer-height * 2;
+    margin-bottom: @footer-height * 2 + 20px;
   }
 }
 
 body > .container {
   //margin-top: 20px;
+  margin-bottom: 20px;
 }
 
 hr {
@@ -44,12 +45,13 @@ hr {
 }
 
 .website-nav {
+  text-align: right;
   font-size: 16px;
 
   .logo {
     width: 100%;
-    margin-bottom: 15px;
     margin-top: 20px;
+    margin-bottom: 15px;
 
     img {
       max-width: 100%;
@@ -59,6 +61,10 @@ hr {
   }
 
   nav {
+    border-right: 1px solid #eee;
+    margin-right: 10px;
+    padding-right: 40px;
+
     a {
       color: @gray-light;
 
@@ -71,17 +77,23 @@ hr {
     ul {
       font-size: 1.3em;
       list-style-type: none;
-      margin: 0 0 0 10px;
+      //margin: 0 10px 0 0;
       padding: 0;
 
       ul {
-        font-size: 0.8em;
-        margin-top: 15px;
+        font-size: 0.7em;
+        margin-top: 5px;
+
+        li {
+          margin-bottom: 5px;
+
+          &.active > a { color: @gray-dark; font-weight: normal; }
+        }
       }
     }
 
     li {
-      margin-bottom: 15px;
+      margin-bottom: 10px;
 
       &:last-child { margin-bottom: 0; }
 
@@ -90,6 +102,12 @@ hr {
         color: @gray;
       }
     }
+  }
+
+  @media(max-width: @screen-xs-max) {
+    text-align: center;
+
+    nav { border: 0; margin-right: 0; padding-right: 0; }
   }
 }
 
