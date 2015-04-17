@@ -15,7 +15,8 @@ var paths = {
 	'bootstrap': './vendor/bower_components/bootstrap/',
 	'jquery': './vendor/bower_components/jquery/',
 	'sourceSansPro': './vendor/bower_components/fontface-source-sans-pro/',
-	'commonmark': './vendor/bower_components/commonmark/'
+	'commonmark': './vendor/bower_components/commonmark/',
+        'ace': './vendor/bower_components/ace-builds/src-min/'
 };
 
 // Styles.
@@ -32,6 +33,7 @@ elixir(function(mix) {
 elixir(function(mix) {
 	mix.copy(paths.bootstrap + 'dist/fonts/**', 'public/fonts')
 		.copy(paths.sourceSansPro + 'fonts/**', 'public/fonts')
+                .copy(paths.ace + '**', 'public/js/ace')
 		.scripts([
 			paths.jquery + 'dist/jquery.js',
 			paths.bootstrap + 'dist/js/bootstrap.js',

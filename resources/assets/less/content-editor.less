@@ -1,9 +1,21 @@
-.js-content-preview,
-.js-content-containers textarea {
-  height: 258px;
-  overflow: auto;
+#js-content-editor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
-.js-content-containers textarea {
-  font-family: monospace;
+.content-editor,
+.content-editor-preview {
+  width: 100%;
+  height: 258px;
+}
+
+.content-editor {
+  position: relative;
+}
+
+.content-editor-preview {
+  overflow-y: auto;
 }

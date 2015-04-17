@@ -15,9 +15,10 @@
 		</li>
 	</ul>
 	<div class="js-content-containers top-10">
-		<div class="hidden" data-tab-id="0">
-			{!! Form::textarea('content', $model->content, ['class' => 'form-control js-content']) !!}
+		<div class="content-editor fake-hidden" data-tab-id="0">
+			<pre id="js-content-editor">{{ $model->content }}</pre>
+			{!! Form::textarea('content', $model->content, ['class' => 'hidden js-content']) !!}
 		</div>
-		<div class="js-content-preview hidden" data-tab-id="1"></div>
+		<div class="js-content-preview content-editor-preview fake-hidden" data-tab-id="1"></div>
 	</div>
 </div>
