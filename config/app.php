@@ -138,6 +138,7 @@ return [
 
 		'Collective\Html\HtmlServiceProvider',
 		'GrahamCampbell\Markdown\MarkdownServiceProvider',
+		'Intervention\Image\ImageServiceProvider',
 
 		/*
 		 * Application Service Providers...
@@ -199,6 +200,7 @@ return [
 		'Form' => 'Collective\Html\FormFacade',
 		'Html' => 'Collective\Html\HtmlFacade',
 		'Markdown'	=> 'GrahamCampbell\Markdown\Facades\Markdown',
+		'Image' => 'Intervention\Image\Facades\Image',
 
 	],
 

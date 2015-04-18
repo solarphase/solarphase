@@ -75,4 +75,14 @@ class File extends Model {
 		return File::getUploadPath().'/'.$this->getFileName();
 	}
 
+	/**
+	 * Returns true if the file is of an image mime type, otherwise false.
+	 *
+	 * @return bool
+	 */
+	public function isImage()
+	{
+		return substr($this->mime_type, 0, 5) === 'image';
+	}
+
 }

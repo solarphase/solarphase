@@ -18,10 +18,15 @@ class StorageController extends Controller {
 	public function file($id)
 	{
 		$file = File::findOrFail($id);
-		$path = storage_path().'/files/'.$file->getFileName();
 		if (!$file->public && !\Auth::check())
 		{
 			return redirect()->guest('/user/login');
+		}
+
+		$path = $file->getFilePath();
+		if ($file->isImage())
+		{
+			return \Image::make($path)->response();
 		}
 
 		return response()->download($path, $file->name);

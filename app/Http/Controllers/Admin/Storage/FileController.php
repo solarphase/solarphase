@@ -76,11 +76,17 @@ class FileController extends Controller {
 	{
 		$file = File::findOrFail($id);
 
+		$path = $file->getFilePath();
+		if ($file->isImage())
+		{
+			return \Image::make($path)->response();
+		}
+
 		return response()->download(
-				$file->getFilePath(),
-				$file->name,
-				['Content-Type' => $file->mime_type]
-			);
+			$path,
+			$file->name,
+			['Content-Type' => $file->mime_type]
+		);
 	}
 
 	/**
