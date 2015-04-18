@@ -23,4 +23,6 @@ return [
 	'preview' => 'Preview',
 	'goto_relation' => 'Go to the current relation.',
 
+	'demo_message' => 'The feature you are trying to access is not available in demo mode.',
+
 ];

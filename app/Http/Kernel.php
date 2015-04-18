@@ -27,6 +27,7 @@ class Kernel extends HttpKernel {
 		'auth' => 'SolarPhase\Http\Middleware\Authenticate',
 		'auth.basic' => 'Illuminate\Auth\Middleware\AuthenticateWithBasicAuth',
 		'guest' => 'SolarPhase\Http\Middleware\RedirectIfAuthenticated',
+		'demo' => 'SolarPhase\Http\Middleware\DemoMiddleware',
 	];
 
 }

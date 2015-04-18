@@ -34,7 +34,7 @@ Route::group(['prefix' => 'user'], function()
 	]);
 });
 
-Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => 'auth'], function()
+Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['demo', 'auth']], function()
 {
 	Route::resource('user', 'UserController');
 
