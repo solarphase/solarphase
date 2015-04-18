@@ -69,8 +69,10 @@ class PageController extends Controller {
 	 */
 	public function show($id)
 	{
+		$page = Page::findOrFail($id);
+		$this->prefixTitle($page->title);
 		return view('admin.website.page.show')
-			->withModel(Page::findOrFail($id));
+			->withModel($page);
 	}
 
 	/**

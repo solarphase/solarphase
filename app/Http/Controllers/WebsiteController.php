@@ -18,7 +18,6 @@ class WebsiteController extends Controller {
 		$uri = '/'.ltrim($uri, '/');
 		$page = Page::with('link')->where('uri', $uri)->firstOrFail();
 
-		$this->setTitle($page->title);
 		if ($page->link)
 		{
 			$this->setActiveLink($page->link);
