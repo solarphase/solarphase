@@ -13,9 +13,19 @@
 		<span class="glyphicon glyphicon-edit"></span>
 	</a>
 
-	{!! Form::open(['route' => [$route.'.destroy', $model->id], 'method' => 'delete', 'class' => 'inline']) !!}
+	{!! Form::open(['route' => [$route.'.destroy', $model->id], 'method' => 'delete', 'class' => 'js-delete-confirm inline']) !!}
 		<button class="btn btn-sm btn-danger" type="submit" title="{{ trans('admin.delete') }}">
 			<span class="glyphicon glyphicon-trash"></span>
 		</button>
 	{!! Form::close() !!}
+
+@section('javascript')
+	<script>
+		(function($) {
+			$('.js-delete-confirm').submit(function() {
+				return confirm('{{ trans('admin.delete_confirm', ['name' => $model->singularName()]) }}');
+			});
+		})(jQuery);
+	</script>
+@stop
 </td>

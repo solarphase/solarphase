@@ -10,6 +10,7 @@ return [
 
 	'deleted' => 'The :model has been deleted.',
 	'deleted_failed' => 'The :model could not be deleted.',
+	'delete_confirm' => 'Are you sure that you want to delete the :name?',
 
 	'form_title' => '{0} New :model|[1,Inf] Edit :model',
 
