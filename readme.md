@@ -27,9 +27,9 @@ Next, can run the supplied install script to finalize the installation:
 
     $ ./bin/setup
 
-All that remains now is that you edit the `.env` file you just copied so that it
-has valid database credentials. Then you will have to migrate the database and
-create a user that you can login with:
+All that remains now is that you edit the `.env` file so that it has valid
+database credentials. Then you will have to migrate the database and create a
+user that you can login with:
 
     $ php artisan db:migrate
     $ php artisan tinker
