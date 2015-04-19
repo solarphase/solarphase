@@ -1,0 +1,33 @@
+#!/bin/bash
+
+echo "============================================================"
+echo " SolarPhase - Setup"
+echo "============================================================"
+
+if [ -f .env ]; then
+  echo ".env file already exists, exiting..."
+  exit 0
+fi
+
+echo "Installing composer dependencies..."
+composer install
+
+echo "Installing node dependencies..."
+npm install
+
+echo "Installing front-end dependencies..."
+bower install
+
+echo "Generation front-end resources..."
+gulp
+
+echo "Creating environment file and generating an application key..."
+cp .env.example .env
+php artisan key:generate
+
+echo "------------------------------------------------------------"
+
+echo " The setup has been completed, please review the .env file"
+echo " and make sure that all settings are correct!"
+
+echo "============================================================"

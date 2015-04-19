@@ -23,23 +23,9 @@ repository on your computer:
     $ git clone https://github.com/solarphase/solarphase.git
     $ cd solarphase
 
-Next, you will have to install all the dependencies required by the website:
+Next, can run the supplied install script to finalize the installation:
 
-    $ composer install
-    $ npm install
-    $ bower install
-
-You will also have to run gulp in order to copy all the dependencies to their
-appropriate locations. This will also generate the stylesheets of the website.
-
-    $ gulp
-
-Now that you have all the third-party components in order, you will need to
-copy the environment configuration and generate an application key for the
-application:
-
-    $ cp .env.example .env
-    $ php artisan key:generate
+    $ ./bin/setup
 
 All that remains now is that you edit the `.env` file you just copied so that it
 has valid database credentials. Then you will have to migrate the database and
