@@ -56,8 +56,8 @@ example of what works:
 
 In the example, we give ownership to the `exampleuser` user and the `www-data`
 group. The permissions are set up in a way where the group has sufficient access
-to run the application while the owning user has full access. Others users that
-aren't in the group `www-data` won't be able to access it.
+to run the application while the owning user has full access. Other users that
+aren't in the group `www-data` will have no access at all..
 
 ### License
 
