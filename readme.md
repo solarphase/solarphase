@@ -61,6 +61,20 @@ the PHP development server:
 
 You can access the user login page at `<application-url>/user/login`.
 
+### Permissions
+
+Getting the permissions for deployment can get a little tricky but here's an
+example of what works:
+
+    # chown -R exampleuser:www-data ./
+    # chmod -R guo-rwx ./ ; chmod -R g+rx ./ ; chmod -R u+rwx
+    # chmod -R g+rwx ./storage
+
+In the example, we give ownership to the `exampleuser` user and the `www-data`
+group. The permissions are then set up in a way where the group has sufficient
+access to run the application while the owning user has full access. Others
+users that aren't in the group `www-data` won't be able to access it.
+
 ### License
 
 The SolarPhase application is open-sourced software licensed under the
