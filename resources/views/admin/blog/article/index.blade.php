@@ -12,7 +12,7 @@
 			<td>{{ $model->title }}</td>
 			<td>
 				<a href="{{ $model->category->getAdminEditUrl() }}">
-					{{ $model->title }}
+					{{ $model->category->title }}
 				</a>
 			</td>
 			<td>
