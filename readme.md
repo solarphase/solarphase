@@ -49,15 +49,15 @@ You can access the user login page at `<application-url>/user/login`.
 
 ### Permissions
 
-Getting the permissions for deployment can get a little tricky but here's an
-example of what works:
+Getting the permissions right for deployment can get a little tricky but here's
+an example of something that works:
 
     # chown -R exampleuser:www-data ./
 
-In the example, we give ownership to the `exampleuser` user and the `www-data`
-group. The permissions are set up in a way where the group has sufficient access
-to run the application while the owning user has full access. Other users that
-aren't in the group `www-data` will have no access at all..
+Basically, we give ownership to the `exampleuser` user and the `www-data` group.
+The permissions are set up in a way where the group has sufficient access to run
+the application while the owning user has full access. Other users that aren't
+in the group `www-data` will have no access at all.
 
 ### License
 
