@@ -52,7 +52,7 @@ You can access the user login page at `<application-url>/user/login`.
 Getting the permissions right for deployment can get a little tricky but here's
 an example of something that works:
 
-    # chown -R exampleuser:www-data ./
+    # chown -R exampleuser.www-data ./
 
 Basically, we give ownership to the `exampleuser` user and the `www-data` group.
 The permissions are set up in a way where the group has sufficient access to run
