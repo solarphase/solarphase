@@ -36,15 +36,15 @@ function setActiveTab(id) {
 }
 
 function scrollPreview() {
-  var from = $containers.find('.ace_scrollbar-v .ace_scrollbar-inner').height();
+  var from = $containers.find('.ace_scrollbar-v').prop('scrollHeight');
   var to = $preview.prop('scrollHeight');
   var ratio = from / to;
 
-  // Basically, we work out how many times bigger the content scroll height is
+  // Basically, we work out how many times bigger the editor scroll height is
   // than the preview scroll height. We then scroll the preview to the content
   // position divided by the calculated ratio. This means that both elements
   // will scroll equally, regardless of difference in height.
-  $preview.scrollTop((editor.getSession().getScrollTop() + 40) / ratio);
+  $preview.scrollTop(editor.getSession().getScrollTop() / ratio);
 }
 
 function refreshPreview() {
