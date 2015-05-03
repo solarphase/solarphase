@@ -67,11 +67,7 @@ class DocumentController extends Controller {
 	 */
 	public function show($id)
 	{
-		$document = Document::findOrFail($id);
-		$this->prefixTitle($document->title);
-
-		return view('admin.storage.document.show')
-			->withModel($document);
+		return redirect()->route('storage.document', $id);
 	}
 
 	/**

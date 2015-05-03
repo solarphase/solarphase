@@ -69,10 +69,7 @@ class ArticleController extends Controller {
 	 */
 	public function show($id)
 	{
-		$article = Article::findOrFail($id);
-		$this->prefixTitle($article->title);
-		return view('admin.blog.article.show')
-			->withModel($article);
+		return redirect()->route('blog.article', $id);
 	}
 
 	/**

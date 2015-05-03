@@ -70,9 +70,7 @@ class PageController extends Controller {
 	public function show($id)
 	{
 		$page = Page::findOrFail($id);
-		$this->prefixTitle($page->title);
-		return view('admin.website.page.show')
-			->withModel($page);
+		return redirect()->route('website.page', $page->uri);
 	}
 
 	/**

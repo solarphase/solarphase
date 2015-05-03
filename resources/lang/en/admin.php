@@ -23,6 +23,7 @@ return [
 	'back' => 'Back',
 	'preview' => 'Preview',
 	'goto_relation' => 'Go to the current relation.',
+	'administrate' => 'Administrate',
 
 	'demo_message' => 'The feature you are trying to access is not available in demo mode.',
 
